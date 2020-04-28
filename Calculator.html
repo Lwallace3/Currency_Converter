@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" manifest="calc.appcache">
+<head>
+    <meta name="viewport" charset="UTF-8"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <link rel="icon" sizes="192x192" href="icons8-office-s-80.png">
+    <link rel="apple-touch-icon" href="icons8-office-s-80.png">
+    <link rel="shortcut icon" href="icons8-office-s-80.png" type="image/x-icon">
+
+    <title>Travel Quick Converter</title>
+    <link rel="stylesheet" href="normalize.css" type="text/css">
+    <link rel="stylesheet" href="calculator.css" type="text/css">
+
+</head>
+<body>
+
+<nav role="navigation">
+    <div id="menuToggle">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <h1><img src="settings.svg"></h1>
+            <h1>Settings</h1>
+
+            <li><label>Home Currency:</label><br>
+                <select id="homeCurrency" class="currency">
+                    <option class="GBP" selected value="0.84175">GBP - British Pound &#x1F1EC;&#x1F1E7;</option>
+                    <option class="EUR" value="1">EUR - Euro &#x1F1EA;&#x1F1FA;</option>
+                    <option class="USD" value="1.1005">USD - US dollar &#x1F1FA;&#x1F1F8;</option>
+                    <option class="JPY" value="120.35">JPY - Japanese yen &#x1F1EF;&#x1F1F5;</option>
+                    <option class="BGN" value="1.9558">BGN - Bulgarian lev &#x1F1E7;&#x1F1EC;</option>
+                    <option class="CZK" value="25.210">CZK - Czech koruna &#x1F1E8;&#x1F1FF;</option>
+                    <option class="DKK" value="7.4731">DKK - Danish krone &#x1F1E9;&#x1F1F0;</option>
+                    <option class="HUF" value="337.05">HUF - Hungarian forint &#x1F1ED;&#x1F1FA;</option>
+                    <option class="PLN" value="4.3009">PLN - Polish zloty &#x1F1F5;&#x1F1F1;</option>
+                    <option class="RON" value="4.7789">RON - Romanian leu &#x1F1F7;&#x1F1F4;</option>
+                    <option class="SEK" value="10.6768">SEK - Swedish Krona &#x1F1F8;&#x1F1EA;</option>
+                    <option class="CHF" value="1.0694">CHF - Swiss Franc &#x1F1E8;&#x1F1ED;</option>
+                    <option class="ISK" value="136.30">ISK - Icelandic krona &#x1F1EE;&#x1F1F8;</option>
+                    <option class="NOK" value="10.1893">NOK - Norwegian krone &#x1F1F3;&#x1F1F4;</option>
+                    <option class="HRK" value="7.4568">HRK - Croatian kuna &#x1F1ED;&#x1F1F7;</option>
+                    <option class="RUB" value="69.0320">RUB - Russian rouble &#x1F1F7;&#x1F1FA;</option>
+                    <option class="TRY" value="6.5975">TRY - Turkish lira &#x1F1F9;&#x1F1F7;</option>
+                    <option class="AUD" value="1.6299">AUD - Australian &#x1F1E6;&#x1F1FA;</option>
+                    <option class="BRL" value="4.6614">BRL - Brazilian real &#x1F1E7;&#x1F1F7;</option>
+                    <option class="CAD" value="1.4644">CAD - Canadian dollar &#x1F1E8;&#x1F1E6;</option>
+                    <option class="CNY" value="7.7681">CNY - Chinese yuan renminbi &#x1F1E8;&#x1F1F3;</option>
+                    <option class="HKD" value="8.5935">HKD - Hong Kong dollar &#x1F1ED;&#x1F1F0;</option>
+                    <option class="IDR" value="15209.45">IDR - Indonesian rupiah &#x1F1EE;&#x1F1E9;</option>
+                    <option class="ILS" value="3.8135">ILS - Isreali shekel &#x1F1EE;&#x1F1F1;</option>
+                    <option class="INR" value="79.0035">INR - Indian rupee &#x1F1EE;&#x1F1F3;</option>
+                    <option class="KRW" value="1319.12">KRW - South Korean won &#x1F1F0;&#x1F1F7;</option>
+                    <option class="MXN" value="20.8183">MXN - Mexican peso &#x1F1F2;&#x1F1FD;</option>
+                    <option class="MYR" value="4.5526">MYR - Malaysian ringgit &#x1F1F2;&#x1F1FE;</option>
+                    <option class="NZD" value="1.7106">NZD - New Zealand dollar &#x1F1F3;&#x1F1FF;</option>
+                    <option class="PHP" value="56.293">PHP - Philippine peso &#x1F1F5;&#x1F1ED;</option>
+                    <option class="SGD" value="1.5138">SGD - Singapore dollar &#x1F1F8;&#x1F1EC;</option>
+                    <option class="THB" value="34.349">THB - Thai baht &#x1F1F9;&#x1F1ED;</option>
+                    <option class="ZAR" value="16.4806">ZAR - South African rand &#x1F1FF;&#x1F1E6;</option>
+                </select>
+            </li>
+            <li>
+                <label>Foreign Currency:</label><br>
+                <select id="foreignCurrency" class="currency">
+                    <option class="GBP" selected value="0.84175">GBP - British Pound &#x1F1EC;&#x1F1E7;</option>
+                    <option class="EUR" value="1">EUR - Euro &#x1F1EA;&#x1F1FA;</option>
+                    <option class="USD" value="1.1005">USD - US dollar &#x1F1FA;&#x1F1F8;</option>
+                    <option class="JPY" value="120.35">JPY - Japanese yen &#x1F1EF;&#x1F1F5;</option>
+                    <option class="BGN" value="1.9558">BGN - Bulgarian lev &#x1F1E7;&#x1F1EC;</option>
+                    <option class="CZK" value="25.210">CZK - Czech koruna &#x1F1E8;&#x1F1FF;</option>
+                    <option class="DKK" value="7.4731">DKK - Danish krone &#x1F1E9;&#x1F1F0;</option>
+                    <option class="HUF" value="337.05">HUF - Hungarian forint &#x1F1ED;&#x1F1FA;</option>
+                    <option class="PLN" value="4.3009">PLN - Polish zloty &#x1F1F5;&#x1F1F1;</option>
+                    <option class="RON" value="4.7789">RON - Romanian leu &#x1F1F7;&#x1F1F4;</option>
+                    <option class="SEK" value="10.6768">SEK - Swedish Krona &#x1F1F8;&#x1F1EA;</option>
+                    <option class="CHF" value="1.0694">CHF - Swiss Franc &#x1F1E8;&#x1F1ED;</option>
+                    <option class="ISK" value="136.30">ISK - Icelandic krona &#x1F1EE;&#x1F1F8;</option>
+                    <option class="NOK" value="10.1893">NOK - Norwegian krone &#x1F1F3;&#x1F1F4;</option>
+                    <option class="HRK" value="7.4568">HRK - Croatian kuna &#x1F1ED;&#x1F1F7;</option>
+                    <option class="RUB" value="69.0320">RUB - Russian rouble &#x1F1F7;&#x1F1FA;</option>
+                    <option class="TRY" value="6.5975">TRY - Turkish lira &#x1F1F9;&#x1F1F7;</option>
+                    <option class="AUD" value="1.6299">AUD - Australian &#x1F1E6;&#x1F1FA;</option>
+                    <option class="BRL" value="4.6614">BRL - Brazilian real &#x1F1E7;&#x1F1F7;</option>
+                    <option class="CAD" value="1.4644">CAD - Canadian dollar &#x1F1E8;&#x1F1E6;</option>
+                    <option class="CNY" value="7.7681">CNY - Chinese yuan renminbi &#x1F1E8;&#x1F1F3;</option>
+                    <option class="HKD" value="8.5935">HKD - Hong Kong dollar &#x1F1ED;&#x1F1F0;</option>
+                    <option class="IDR" value="15209.45">IDR - Indonesian rupiah &#x1F1EE;&#x1F1E9;</option>
+                    <option class="ILS" value="3.8135">ILS - Isreali shekel &#x1F1EE;&#x1F1F1;</option>
+                    <option class="INR" value="79.0035">INR - Indian rupee &#x1F1EE;&#x1F1F3;</option>
+                    <option class="KRW" value="1319.12">KRW - South Korean won &#x1F1F0;&#x1F1F7;</option>
+                    <option class="MXN" value="20.8183">MXN - Mexican peso &#x1F1F2;&#x1F1FD;</option>
+                    <option class="MYR" value="4.5526">MYR - Malaysian ringgit &#x1F1F2;&#x1F1FE;</option>
+                    <option class="NZD" value="1.7106">NZD - New Zealand dollar &#x1F1F3;&#x1F1FF;</option>
+                    <option class="PHP" value="56.293">PHP - Philippine peso &#x1F1F5;&#x1F1ED;</option>
+                    <option class="SGD" value="1.5138">SGD - Singapore dollar &#x1F1F8;&#x1F1EC;</option>
+                    <option class="THB" value="34.349">THB - Thai baht &#x1F1F9;&#x1F1ED;</option>
+                    <option class="ZAR" value="16.4806">ZAR - South African rand &#x1F1FF;&#x1F1E6;</option>
+                </select>
+            </li>
+            <li>
+                <label>Bank Fee:</label><br>
+                <select id="bankFee">
+                    <option value="1">0%</option>
+                    <option value="1.02">2%</option>
+                    <option value="1.04">4%</option>
+                    <option value="1.06">6%</option>
+                </select>
+            </li>
+            <i>Changes are only saved on use</i>
+            <li>
+                Liam Wallace<br>
+                Travel Quick Converter
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="gridContainer">
+
+    <div class="column">
+        <div id="display" class="row">
+        </div>
+        <div class=row">
+            <button class="calcButton" id="button7" value="7">7</button>
+            <button class="calcButton" id="button8" value="8">8</button>
+            <button class="calcButton" id="button9" value="9">9</button>
+        </div>
+        <div class="row">
+            <button class="calcButton" id="button4" value="4">4</button>
+            <button class="calcButton" id="button5" value="5">5</button>
+            <button class="calcButton" id="button6" value="6">6</button>
+        </div>
+        <div class="row">
+            <button class="calcButton" id="button1" value="1">1</button>
+            <button class="calcButton" id="button2" value="2">2</button>
+            <button class="calcButton" id="button3" value="3">3</button>
+        </div>
+        <div class="row">
+            <button class="calcButton" id="clearButton">C</button>
+            <button class="calcButton" id="button0" value="0">0</button>
+            <button class="calcButton" id="equalsButton">=</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="CalculatorModel.js"></script>
+<script src="CalculatorView.js"></script>
+<script src="CalculatorController.js"></script>
+</html>
